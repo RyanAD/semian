@@ -3,7 +3,7 @@ module Semian
 
   # Determines if Semian supported on the current platform.
   def sysv_semaphores_supported?
-    /linux/.match(RUBY_PLATFORM)
+    ENV['SEMIAN_SEMAPHORES_ENABLED'] && /linux/.match(RUBY_PLATFORM)
   end
 
   def semaphores_enabled?
